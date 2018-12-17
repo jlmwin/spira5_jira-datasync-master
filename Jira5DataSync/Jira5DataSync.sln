@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jira5DataSync", "Jira5DataSync.csproj", "{50A3FAEC-4A05-4364-A5F2-E74EE46893EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50A3FAEC-4A05-4364-A5F2-E74EE46893EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50A3FAEC-4A05-4364-A5F2-E74EE46893EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50A3FAEC-4A05-4364-A5F2-E74EE46893EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50A3FAEC-4A05-4364-A5F2-E74EE46893EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A8898FA-9992-43B9-B674-4C896E6FD718}
+	EndGlobalSection
+EndGlobal

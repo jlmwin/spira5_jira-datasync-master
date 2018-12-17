@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{50A3FAEC-4A05-4364-A5F2-E74EE46893EB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Inflectra.SpiraTest.PlugIns.Jira5DataSync</RootNamespace>
+    <AssemblyName>JiraDataSync</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Assemblies\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PlugInInterfaces">
+      <HintPath>..\Assemblies\PlugInInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Certificates.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="CustomPropertyValue.cs" />
+    <Compile Include="DataSync.cs" />
+    <Compile Include="InternalFunctions.cs" />
+    <Compile Include="JiraClient\BaseEntity.cs" />
+    <Compile Include="JiraClient\JiraAttachment.cs" />
+    <Compile Include="JiraClient\JiraAvatarUrls.cs" />
+    <Compile Include="JiraClient\JiraComment.cs" />
+    <Compile Include="JiraClient\JiraComponent.cs" />
+    <Compile Include="JiraClient\JiraCreateMetaData.cs" />
+    <Compile Include="JiraClient\JiraCustomFieldValue.cs" />
+    <Compile Include="JiraClient\JiraIssue.cs" />
+    <Compile Include="JiraClient\JiraIssueLink.cs" />
+    <Compile Include="JiraClient\JiraManager.cs" />
+    <Compile Include="JiraClient\JiraProject.cs" />
+    <Compile Include="JiraClient\JiraSearchRequest.cs" />
+    <Compile Include="JiraClient\JiraSearchResponse.cs" />
+    <Compile Include="JiraClient\JiraVersion.cs" />
+    <Compile Include="PermissiveSecurityPolicy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SpiraSoapService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SpiraClientFactory.cs" />
+    <Compile Include="UploadHelper\HttpUploadHelper.cs" />
+    <Compile Include="UploadHelper\MimePart.cs" />
+    <Compile Include="UploadHelper\StreamMimePart.cs" />
+    <Compile Include="UploadHelper\StringMimePart.cs" />
+    <Compile Include="UploadHelper\UploadFile.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteArtifactSubscription.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteAssociation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteAutomatedTestRun.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteAutomationEngine.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteAutomationHost.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteBuild.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteComment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteComponent.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteCustomList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteCustomListValue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteCustomProperty.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteDataMapping.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteDataSyncSystem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteDocument.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteDocumentFolder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteDocumentType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteDocumentVersion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteHistoryChange.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteHistoryChangeSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteIncident.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteIncidentPriority.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteIncidentSeverity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteIncidentStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteIncidentType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteLinkedArtifact.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteManualTestRun.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteMessageInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteProject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteProjectArtifact.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteProjectRole.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteProjectUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteRelease.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteReleaseStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteReleaseTestCaseMapping.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteReleaseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteRequirement.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteRequirementStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteRequirementStep.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteRequirementTestCaseMapping.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteRequirementType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteSavedFilter.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteSetting.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteSourceCodeBranch.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteSourceCodeFile.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteSourceCodeFolder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteSourceCodeRevision.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteTask.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteTaskFolder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteTaskStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteTaskType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteTestCase.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteTestCaseFolder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteTestCaseParameter.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteTestCaseStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteTestCaseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteTestRun.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteTestSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteTestSetFolder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteTestSetParameter.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteTestSetTestCaseMapping.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteTestSetTestCaseParameter.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteTestStep.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteTestStepParameter.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteUserMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteVersion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteWorkflowCustomProperty.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteWorkflowField.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\Inflectra.SpiraTest.PlugIns.Jira5DataSync.SpiraSoapService.RemoteWorkflowTransition.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SpiraSoapService\SoapService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="README.txt" />
+    <None Include="Service References\SpiraSoapService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SpiraSoapService\configuration.svcinfo" />
+    <None Include="Service References\SpiraSoapService\configuration91.svcinfo" />
+    <None Include="Service References\SpiraSoapService\SoapService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SpiraSoapService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>rem xcopy "$(TargetDir)*.dll" "\\dalek\SpiraTeam_Bin" /Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>

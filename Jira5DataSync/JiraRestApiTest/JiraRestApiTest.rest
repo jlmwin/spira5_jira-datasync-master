@@ -1,0 +1,229 @@
+{
+  "CurrentRequestName": "Get_Projects",
+  "CurrentPath": "C:\\Subversion\\Projects\\SpiraTeam Add Ons\\Trunk\\Data Sync PlugIns\\Jira Data Sync\\Jira5DataSync\\JiraRestApiTest\\JiraRestApiTest.rest",
+  "Name": "JiraRestApiTest.rest",
+  "Requests": [
+    {
+      "Name": "Search_Issues",
+      "Url": "http://dalek:8080/rest/api/2/search",
+      "Method": "POST",
+      "Body": "{\r\n    \"jql\": \"project = DEMO\",\r\n    \"startAt\": 0,\r\n    \"maxResults\": 15,\r\n    \"fields\": [\"key\"]\r\n}",
+      "Credential": {
+        "UserName": "administrator",
+        "Password": "PleaseChange",
+        "SecurePassword": {
+          "Length": 12
+        },
+        "Domain": ""
+      },
+      "Headers": [
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        }
+      ],
+      "Parameters": []
+    },
+    {
+      "Name": "Get_Issue",
+      "Url": "http://dalek:8080/rest/api/2/issue/{issueKey}",
+      "Method": "GET",
+      "Body": "",
+      "Credential": {
+        "UserName": "administrator",
+        "Password": "PleaseChange",
+        "SecurePassword": {
+          "Length": 12
+        },
+        "Domain": ""
+      },
+      "Headers": [
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        }
+      ],
+      "Parameters": [
+        {
+          "Name": "issueKey",
+          "TokenName": "{issueKey}",
+          "Value": "DEMO-4"
+        }
+      ]
+    },
+    {
+      "Name": "Get_Versions",
+      "Url": "http://dalek:8080/rest/api/2/project/DEMO/versions",
+      "Method": "GET",
+      "Body": "",
+      "Credential": {
+        "UserName": "administrator",
+        "Password": "PleaseChange",
+        "SecurePassword": {
+          "Length": 12
+        },
+        "Domain": ""
+      },
+      "Headers": [
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        }
+      ],
+      "Parameters": []
+    },
+    {
+      "Name": "Get_MyPermissions",
+      "Url": "http://dalek:8080/rest/api/2/mypermissions",
+      "Method": "GET",
+      "Body": "",
+      "Credential": {
+        "UserName": "administrator",
+        "Password": "PleaseChange",
+        "SecurePassword": {
+          "Length": 12
+        },
+        "Domain": ""
+      },
+      "Headers": [
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        }
+      ],
+      "Parameters": []
+    },
+    {
+      "Name": "Create_Issue",
+      "Url": "http://dalek:8080/rest/api/2/issue",
+      "Method": "POST",
+      "Body": "{\"expand\":null,\"key\":null,\"fields\":{\"summary\":\"New Incident from Spira\",\"project\":{\"key\":\"DEMO\",\"name\":null,\"avatarUrls\":null,\"id\":10000},\"assignee\":{\"name\":\"administrator\",\"emailAddress\":null,\"avatarUrls\":null,\"displayName\":null,\"active\":false,\"id\":0},\"reporter\":{\"name\":\"administrator\",\"emailAddress\":null,\"avatarUrls\":null,\"displayName\":null,\"active\":false,\"id\":0},\"description\":\"Description\\r\\n Enter the appropriate data and click Submit\\r\\n\\r\\n Expected Result\\r\\n The form submits\\r\\n\\r\\n Actual Result\\r\\n bad\\r\\n\\r\\nTest Run Steps  \\r\\n Click on the link to open the application = Passed \\r\\n Enter the appropriate data and click Submit = Failed\",\"issuetype\":{\"description\":null,\"iconUrl\":null,\"name\":null,\"subtask\":false,\"id\":1}}}",
+      "Credential": {
+        "UserName": "administrator",
+        "Password": "PleaseChange",
+        "SecurePassword": {
+          "Length": 12
+        },
+        "Domain": ""
+      },
+      "Headers": [
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        }
+      ],
+      "Parameters": []
+    },
+    {
+      "Name": "Get_IssueMetadata",
+      "Url": "http://dalek:8080/rest/api/2/issue/createmeta?expand=projects.issuetypes.fields",
+      "Method": "GET",
+      "Body": "",
+      "Credential": {
+        "UserName": "administrator",
+        "Password": "PleaseChange",
+        "SecurePassword": {
+          "Length": 12
+        },
+        "Domain": ""
+      },
+      "Headers": [
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        }
+      ],
+      "Parameters": []
+    },
+    {
+      "Name": "Get_Fields",
+      "Url": "http://dalek:8080/rest/api/2/field",
+      "Method": "GET",
+      "Body": "",
+      "Credential": {
+        "UserName": "administrator",
+        "Password": "PleaseChange",
+        "SecurePassword": {
+          "Length": 12
+        },
+        "Domain": ""
+      },
+      "Headers": [
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        }
+      ],
+      "Parameters": []
+    },
+    {
+      "Name": "Get_ApplicationProperties",
+      "Url": "http://dalek:8080/rest/api/2/application-properties",
+      "Method": "GET",
+      "Body": "",
+      "Credential": {
+        "UserName": "administrator",
+        "Password": "PleaseChange",
+        "SecurePassword": {
+          "Length": 12
+        },
+        "Domain": ""
+      },
+      "Headers": [
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        }
+      ],
+      "Parameters": []
+    },
+    {
+      "Name": "Get_User",
+      "Url": "http://dalek:8080/rest/api/2/user?username={username}",
+      "Method": "GET",
+      "Body": "",
+      "Credential": {
+        "UserName": "administrator",
+        "Password": "PleaseChange",
+        "SecurePassword": {
+          "Length": 12
+        },
+        "Domain": ""
+      },
+      "Headers": [
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        }
+      ],
+      "Parameters": [
+        {
+          "Name": "username",
+          "TokenName": "{username}",
+          "Value": "administrator"
+        }
+      ]
+    },
+    {
+      "Name": "Get_Projects",
+      "Url": "https://thirtyseventy.atlassian.net/rest/api/2/project",
+      "Method": "GET",
+      "Body": "",
+      "Credential": {
+        "UserName": "spirasync",
+        "Password": "spirasync",
+        "SecurePassword": {
+          "Length": 9
+        },
+        "Domain": ""
+      },
+      "Headers": [
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        }
+      ],
+      "Parameters": []
+    }
+  ]
+}
